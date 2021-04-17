@@ -32,7 +32,11 @@
 │------│--└─resources   
 │------│------└─META-INF   
 └─-----│----------└─`extensions`   扩展类   
-  
+
+# 启动与配置
+1. 找个zookeeper 可以远程  也可以本机  
+2. 要修改客户端和服务端的配置文件properties中的zk地址
+3. 逐个启动server和client即可
 
 # 服务端实现
 ## 主要方法
