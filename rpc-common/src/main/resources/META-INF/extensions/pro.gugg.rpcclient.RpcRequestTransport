@@ -1,0 +1,2 @@
+netty=pro.gugg.remoting.transport.netty.client.NettyRpcClient
+socket=pro.gugg.rpcclient.socket.SocketRpcClient
