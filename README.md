@@ -62,10 +62,10 @@
 主要是通过写服务发现，到zookeeper上找服务名<组名，版本号，方法名>对应的服务地址<ip,port>,
 然后通过动态代理接口类，实现在调用接口后远程调用（socket/netty）来返回数据;
 1. 关于服务发现
-发现是通过发现 **_ServiceRecovery_**来实现
+发现是通过发现 **_ServiceRecovery_** 来实现
    * 首先根据调用的类的类名，组名 ，版本号 生成zookeeper的键值，
    *  然后获取对应的子节点（一堆socket三元组），通过一致性hash算法或者随机算法，选取一个作为目标地址
-2. 关于远程调用，使用 **_RpcRequestTransport_**接口对应的实现类（socket/netty，取决于服务端的监听方式）来发送request，并返回
+2. 关于远程调用，使用 **_RpcRequestTransport_** 接口对应的实现类（socket/netty，取决于服务端的监听方式）来发送request，并返回
 
 
 
