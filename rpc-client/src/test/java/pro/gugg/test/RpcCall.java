@@ -1,12 +1,14 @@
-package pro.gugg;
+package pro.gugg.test;
 
+import pro.gugg.Hello;
+import pro.gugg.HelloService;
 import pro.gugg.common.entity.RpcServiceProperties;
-import pro.gugg.rpcclient.proxy.RpcClientProxy;
 import pro.gugg.rpcclient.RpcRequestTransport;
+import pro.gugg.rpcclient.proxy.RpcClientProxy;
 import pro.gugg.rpcclient.socket.SocketRpcClient;
 
-public class SocketClientMain {
-    public static String socketCall() {
+public class RpcCall {
+    public static String SocketCall() {
         // 网络传输方式
         RpcRequestTransport rpcRequestTransport = new SocketRpcClient();
         // 目标服务定位（无网络位置）
@@ -15,16 +17,7 @@ public class SocketClientMain {
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
         String hello = helloService.sayHello(new Hello("客户端", "你很帅"));
         System.out.println("client : " + hello);
+
         return hello;
-    }
-    public static void main(String[] args) {
-        // 网络传输方式
-        RpcRequestTransport rpcRequestTransport=new SocketRpcClient();
-        // 目标服务定位（无网络位置）
-        RpcServiceProperties rpcServiceProperties=RpcServiceProperties.builder().group("groupSocket").version("versionSocket").build();
-        RpcClientProxy rpcClientProxy=new RpcClientProxy(rpcRequestTransport,rpcServiceProperties);
-        HelloService helloService=rpcClientProxy.getProxy(HelloService.class);
-        String hello=helloService.sayHello(new Hello("客户端","你很帅"));
-        System.out.println( "client : "+ hello);
     }
 }

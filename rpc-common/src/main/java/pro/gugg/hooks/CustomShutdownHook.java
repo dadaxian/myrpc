@@ -8,6 +8,9 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
+/**
+ *
+ */
 @Slf4j
 public class CustomShutdownHook {
     private  static  final  CustomShutdownHook CUSTOM_SHUTDOWN_HOOK =new CustomShutdownHook();
