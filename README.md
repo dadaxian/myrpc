@@ -43,8 +43,8 @@
 服务端的调用实现
 首先服务端要注册通过 **_SocketRpcServer_** 执行 注册和 socket的监听
 1. 关于注册
-注册通过**_ServiceProvider_** （单例）来实现
-   * 先讲 服务的properties序列化结果，要调用的方法所属类的实例，放入我们的map中
+注册通过 **_ServiceProvider_** （单例）来实现
+   * 先将 <服务的properties序列化结果，要调用的方法所属类的实例>，放入我们的map中
    * 调用Curator实现的zookeeper的客户端实现zookeeper的服务注册。
     
 2. 关于监听
@@ -62,10 +62,12 @@
 主要是通过写服务发现，到zookeeper上找服务名<组名，版本号，方法名>对应的服务地址<ip,port>,
 然后通过动态代理接口类，实现在调用接口后远程调用（socket/netty）来返回数据;
 1. 关于服务发现
-发现是通过发现**_ServiceRecovery_**来实现
+发现是通过发现 **_ServiceRecovery_** 来实现
    * 首先根据调用的类的类名，组名 ，版本号 生成zookeeper的键值，
    *  然后获取对应的子节点（一堆socket三元组），通过一致性hash算法或者随机算法，选取一个作为目标地址
-2. 关于远程调用，使用**_RpcRequestTransport_**接口对应的实现类（socket/netty，取决于服务端的监听方式）来发送request，并返回
+2. 关于远程调用，使用 **_RpcRequestTransport_** 接口对应的实现类（socket/netty，取决于服务端的监听方式）来发送request，并返回
+
+
 
 ## 注意点
 1. 在服务发现时-> 选取服务-> 负载均衡—> 一致性hash
