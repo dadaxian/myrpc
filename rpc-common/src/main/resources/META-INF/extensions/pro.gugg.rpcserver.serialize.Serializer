@@ -1,0 +1,2 @@
+kyro=pro.gugg.rpcserver.serialize.kyro.KryoSerializer
+protostuff=pro.gugg.rpcserver.serialize.protostuff.ProtostuffSerializer

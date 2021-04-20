@@ -14,6 +14,20 @@
         <module>rpc-api</module>
         <module>rpc-client</module>
     </modules>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <netty.version>4.1.42.Final</netty.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
+        <!--logging-->
+        <slf4j.version>1.7.25</slf4j.version>
+        <!-- zookeeper cli -->
+        <curator-version>4.2.0</curator-version>
+        <encoding>UTF-8</encoding>
+        <kryo.version>4.0.2</kryo.version>
+        <!-- protostuff -->
+        <protostuff.version>1.7.2</protostuff.version>
+    </properties>
     <dependencies>
         <!-- log -->
         <dependency>
@@ -33,16 +47,6 @@
             <version>1.18.18</version>
         </dependency>
     </dependencies>
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <spring.version>5.2.7.RELEASE</spring.version>
-        <!--logging-->
-        <slf4j.version>1.7.25</slf4j.version>
-        <!-- zookeeper cli -->
-        <curator-version>4.2.0</curator-version>
-        <encoding>UTF-8</encoding>
-    </properties>
     <build>
         <plugins>
             <plugin>

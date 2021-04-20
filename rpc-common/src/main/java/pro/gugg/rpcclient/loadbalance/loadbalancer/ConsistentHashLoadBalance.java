@@ -36,9 +36,7 @@ public class ConsistentHashLoadBalance  extends AbstractLoadBalance {
     }
     static  class ConsistentHashSelector {
         private final TreeMap<Long , String > virtualInvokers;
-
         private final int identityHashCode;
-
         ConsistentHashSelector(List<String> invokers, int replicaNumber, int identityHashCode){
             this.virtualInvokers = new TreeMap<>();
             this.identityHashCode = identityHashCode;

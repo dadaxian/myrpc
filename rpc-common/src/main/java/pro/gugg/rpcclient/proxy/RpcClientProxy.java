@@ -9,12 +9,14 @@ import pro.gugg.common.exception.RpcException;
 import pro.gugg.common.entity.dto.RpcRequest;
 import pro.gugg.common.entity.dto.RpcResponse;
 import pro.gugg.rpcclient.RpcRequestTransport;
+import pro.gugg.rpcclient.netty.NettyRpcClient;
 import pro.gugg.rpcclient.socket.SocketRpcClient;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 public class RpcClientProxy implements InvocationHandler {
@@ -66,10 +68,10 @@ public class RpcClientProxy implements InvocationHandler {
                 .version(rpcServiceProperties.getVersion())
                 .build();
         RpcResponse<Object> rpcResponse = null;
-//        if (rpcRequestTransport instanceof NettyRpcClient) {
-//            CompletableFuture<RpcResponse<Object>> completableFuture = (CompletableFuture<RpcResponse<Object>>) rpcRequestTransport.sendRpcRequest(rpcRequest);
-//            rpcResponse = completableFuture.get();
-//        }
+        if (rpcRequestTransport instanceof NettyRpcClient) {
+            CompletableFuture<RpcResponse<Object>> completableFuture = (CompletableFuture<RpcResponse<Object>>) rpcRequestTransport.sendRpcRequest(rpcRequest);
+            rpcResponse = completableFuture.get();
+        }
         if (rpcRequestTransport instanceof SocketRpcClient) {
             rpcResponse = (RpcResponse<Object>) rpcRequestTransport.sendRpcRequest(rpcRequest);
         }
