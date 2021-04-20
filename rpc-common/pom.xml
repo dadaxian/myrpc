@@ -16,7 +16,33 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
     <dependencies>
-
+        <!--Serializer-->
+        <!--    _________________________________________    -->
+        <!--kryo-->
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>${kryo.version}</version>
+        </dependency>
+        <!-- protostuff -->
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+        <!--    _________________________________________    -->
+        <!--netty-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+        <!--    _________________________________________    -->
         <!--zookeeper-->
         <dependency>
             <groupId>org.apache.curator</groupId>
