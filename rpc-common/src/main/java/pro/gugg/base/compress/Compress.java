@@ -1,4 +1,4 @@
-package pro.gugg.rpcserver.compress;
+package pro.gugg.base.compress;
 
 import pro.gugg.base.extension.SPI;
 

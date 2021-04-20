@@ -16,8 +16,8 @@ import pro.gugg.base.factory.SingletonFactory;
 import pro.gugg.base.utils.concurrent.threadpool.ThreadPoolFactoryUtils;
 import pro.gugg.common.entity.RpcServiceProperties;
 import pro.gugg.hooks.CustomShutdownHook;
-import pro.gugg.rpcserver.codec.RpcMessageDecoder;
-import pro.gugg.rpcserver.codec.RpcMessageEncoder;
+import pro.gugg.codec.RpcMessageDecoder;
+import pro.gugg.codec.RpcMessageEncoder;
 import pro.gugg.rpcserver.provider.ServiceProvider;
 import pro.gugg.rpcserver.provider.ServiceProviderImpl;
 

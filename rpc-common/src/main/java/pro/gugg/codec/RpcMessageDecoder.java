@@ -1,4 +1,4 @@
-package pro.gugg.rpcserver.codec;
+package pro.gugg.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import pro.gugg.base.extension.ExtensionLoader;
 import pro.gugg.common.entity.dto.RpcRequest;
 import pro.gugg.common.entity.dto.RpcResponse;
-import pro.gugg.rpcserver.compress.Compress;
+import pro.gugg.base.compress.Compress;
 import pro.gugg.rpcserver.constants.RpcConstants;
 import pro.gugg.rpcserver.dto.RpcMessage;
 import pro.gugg.rpcserver.enums.CompressTypeEnum;

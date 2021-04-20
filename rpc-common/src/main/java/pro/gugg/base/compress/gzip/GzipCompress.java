@@ -1,6 +1,6 @@
-package pro.gugg.rpcserver.compress.gzip;
+package pro.gugg.base.compress.gzip;
 
-import pro.gugg.rpcserver.compress.Compress;
+import pro.gugg.base.compress.Compress;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
